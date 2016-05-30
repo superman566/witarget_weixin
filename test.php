@@ -4,7 +4,8 @@
 	$nonce = $_GET['nonce'];
 	$token = 'zhenai';
 	$signature = $_GET['signature'];
-
+	echo $timestamp.$nonce.$token.$signature.$_GET['echostr'];
+	
 	// sort these 3 varible
 	$array = array($timestamp,$nonce,$token);
 	sort($array);	// encrpty using sha1 method
@@ -15,4 +16,6 @@
 		echo $_GET['echostr'];
 		exit;
 	}
+
+
 ?>
