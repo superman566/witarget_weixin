@@ -7,12 +7,11 @@
 
 	// sort these 3 varible
 	$array = array($timestamp,$nonce,$token);
-	sort($array);
-	// encrpty using sha1 method
-	$tmpstr = implode('', $array);
+	sort($array);	// encrpty using sha1 method
+	$tmpstr = implode($array);
 	$tmpstr = sha1($tmpstr);
 	// verificate using signature
-	if($tmpstr == signature){
+	if($tmpstr == $signature){
 		echo $_GET['echostr'];
 		exit;
 	}
