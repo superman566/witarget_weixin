@@ -4,7 +4,7 @@
 	$nonce = $_GET['nonce'];
 	$token = 'zhenai';
 	$signature = $_GET['signature'];
-	echo $timestamp.$nonce.$token.$signature.$_GET['echostr'];
+	//echo $timestamp.$nonce.$token.$signature.$_GET['echostr'];
 	
 	// sort these 3 varible
 	$array = array($timestamp,$nonce,$token);
