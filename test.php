@@ -1,10 +1,11 @@
 <?php
+include 'test2.php';
+
 	//get timestamp, nonce, token
 	$timestamp = $_GET['timestamp'];
 	$nonce = $_GET['nonce'];
 	$token = 'zhenai';
 	$signature = $_GET['signature'];
-	//echo $timestamp.$nonce.$token.$signature.$_GET['echostr'];
 	
 	// sort these 3 varible
 	$array = array($timestamp,$nonce,$token);
@@ -12,10 +13,11 @@
 	$tmpstr = implode($array);
 	$tmpstr = sha1($tmpstr);
 	// verificate using signature
-	if($tmpstr == $signature){
+	if(($tmpstr == $signature) && $echostr){
 		echo $_GET['echostr'];
 		exit;
-	}
-
-
+	} else{
+    echo resMsg();
+  }
+ 
 ?>
